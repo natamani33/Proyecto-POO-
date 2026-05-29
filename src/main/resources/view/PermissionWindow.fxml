@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.PermissionController"
+      spacing="20"
+      styleClass="page-shell">
+
+    <VBox styleClass="hero-card">
+        <Label text="Gestión de Permisos" styleClass="page-title"/>
+        <Label text="Mantén permisos y justificaciones con una estructura visual más limpia y homogénea."
+               wrapText="true"
+               styleClass="page-subtitle"/>
+    </VBox>
+
+    <VBox styleClass="content-card" VBox.vgrow="ALWAYS">
+        <Label text="Datos del permiso" styleClass="section-title"/>
+
+        <GridPane styleClass="form-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+            </columnConstraints>
+
+        <Label text="Servidor *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbServer" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Tipo permiso *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbPermissionType" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Fecha *" styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpDate" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="N° días *" styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtNumberOfDays" promptText="1"
+                   GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Justificación" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextArea fx:id="txtJustification" prefRowCount="3"
+                  GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+        </GridPane>
+
+        <VBox styleClass="table-card" VBox.vgrow="ALWAYS">
+            <Label text="Permisos registrados" styleClass="section-title"/>
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"     text="ID"       prefWidth="90"/>
+                    <TableColumn fx:id="colServer" text="Servidor" prefWidth="340"/>
+                    <TableColumn fx:id="colType"   text="Tipo"     prefWidth="260"/>
+                    <TableColumn fx:id="colDate"   text="Fecha"    prefWidth="170"/>
+                    <TableColumn fx:id="colDays"   text="Días"     prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <HBox styleClass="action-bar">
+            <Button text="Atrás" onAction="#goBack" styleClass="action-button secondary-button"/>
+            <Button text="Guardar" onAction="#save" styleClass="action-button primary-button"/>
+            <Button text="Eliminar" onAction="#delete" styleClass="action-button danger-button"/>
+        </HBox>
+    </VBox>
+
+</VBox>

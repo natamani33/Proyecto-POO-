@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.PublicServerController"
+      spacing="20"
+      styleClass="page-shell">
+
+    <VBox styleClass="hero-card">
+        <Label text="Sistema de Gestión de Servidores Públicos" styleClass="page-title"/>
+        <Label text="Gobernación de Boyacá" styleClass="page-subtitle"/>
+    </VBox>
+
+    <VBox styleClass="content-card" VBox.vgrow="ALWAYS">
+        <Label text="Datos del servidor" styleClass="section-title"/>
+
+        <GridPane styleClass="form-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="110" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints minWidth="110" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints minWidth="110" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+            </columnConstraints>
+
+        <Label text="Cédula *"       styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtIdNumber" promptText="Cédula"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Nombres *"      styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtFirstName" promptText="Nombres"
+                   GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Apellidos *"    styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+        <TextField fx:id="txtLastName" promptText="Apellidos"
+                   GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+
+        <Label text="Fecha Nac. *"   styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpBirthDate"
+                    GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Género *"       styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbGender" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Est. Civil *"   styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+        <ComboBox fx:id="cbMaritalStatus" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="1" GridPane.columnIndex="5"/>
+
+        <Label text="Tipo Sangre *"  styleClass="required-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbBloodType" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Email Personal *" styleClass="required-label" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtPersonalEmail" promptText="correo@gmail.com"
+                   GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+        <Label text="Email Inst. *"  styleClass="required-label" GridPane.rowIndex="2" GridPane.columnIndex="4"/>
+        <TextField fx:id="txtInstitutionalEmail" promptText="correo@usta.edu.co"
+                   GridPane.rowIndex="2" GridPane.columnIndex="5"/>
+
+        <Label text="Teléfono *"     styleClass="required-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPhone" promptText="Teléfono"
+                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Tipo Empleo *"  styleClass="required-label" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbEmploymentType" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+        </GridPane>
+
+        <VBox styleClass="table-card" VBox.vgrow="ALWAYS">
+            <Label text="Registros" styleClass="section-title"/>
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"        text="ID"        prefWidth="90"/>
+                    <TableColumn fx:id="colIdNumber"  text="Cédula"    prefWidth="160"/>
+                    <TableColumn fx:id="colFirstName" text="Nombres"   prefWidth="250"/>
+                    <TableColumn fx:id="colLastName"  text="Apellidos" prefWidth="250"/>
+                    <TableColumn fx:id="colPhone"     text="Teléfono"  prefWidth="170"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <HBox styleClass="action-bar">
+            <Button text="Atrás"
+                onAction="#goBack"
+                    styleClass="action-button secondary-button"/>
+
+            <Button text="Guardar"
+                    onAction="#save"
+                    styleClass="action-button primary-button"/>
+
+            <Button text="Eliminar"
+                    onAction="#delete"
+                    styleClass="action-button danger-button"/>
+        </HBox>
+    </VBox>
+
+</VBox>

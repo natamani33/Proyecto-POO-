@@ -1,0 +1,16 @@
+services:
+  postgres_talento:
+    image: postgres:16
+    container_name: talento_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: talento_humano
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: talento_seguro_2026
+    ports:
+      - "55439:5432"
+    volumes:
+      - talento_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  talento_postgres_data:

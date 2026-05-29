@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.DependencyController"
+      spacing="20"
+      styleClass="page-shell">
+
+    <VBox styleClass="hero-card">
+        <Label text="Gestión de Dependencias y Secretarías" styleClass="page-title"/>
+        <Label text="Mantén la estructura organizacional con un formulario limpio y una tabla más legible."
+               wrapText="true"
+               styleClass="page-subtitle"/>
+    </VBox>
+
+    <VBox styleClass="content-card" VBox.vgrow="ALWAYS">
+        <Label text="Datos de la dependencia" styleClass="section-title"/>
+
+        <GridPane styleClass="form-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+            </columnConstraints>
+
+        <Label text="Nombre *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtName" promptText="Nombre dependencia"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Nivel *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtLevel" promptText="Central, Secretaría, Dirección..."
+                   GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+        </GridPane>
+
+        <VBox styleClass="table-card" VBox.vgrow="ALWAYS">
+            <Label text="Dependencias registradas" styleClass="section-title"/>
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"    text="ID"     prefWidth="100"/>
+                    <TableColumn fx:id="colName"  text="Nombre" prefWidth="460"/>
+                    <TableColumn fx:id="colLevel" text="Nivel"  prefWidth="360"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <HBox styleClass="action-bar">
+            <Button text="Atrás" onAction="#goBack" styleClass="action-button secondary-button"/>
+            <Button text="Guardar" onAction="#save" styleClass="action-button primary-button"/>
+            <Button text="Eliminar" onAction="#delete" styleClass="action-button danger-button"/>
+        </HBox>
+    </VBox>
+
+</VBox>

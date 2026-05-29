@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.AdministrativeSituationController"
+      spacing="20"
+      styleClass="page-shell">
+
+    <VBox styleClass="hero-card">
+        <Label text="Situación Administrativa" styleClass="page-title"/>
+        <Label text="Registra novedades administrativas con un formulario más claro y una tabla con jerarquía visual."
+               wrapText="true"
+               styleClass="page-subtitle"/>
+    </VBox>
+
+    <VBox styleClass="content-card" VBox.vgrow="ALWAYS">
+        <Label text="Datos de la novedad" styleClass="section-title"/>
+
+        <GridPane styleClass="form-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+            </columnConstraints>
+
+        <Label text="Servidor *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbServer" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Tipo situación *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbSituationType" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Fecha inicio *" styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpStartDate" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Fecha fin" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <DatePicker fx:id="dpEndDate" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Acto administrativo" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtAdministrativeActId" promptText="No. acto"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Descripción" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextArea fx:id="txtDescription" prefRowCount="3"
+                  GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+        </GridPane>
+
+        <VBox styleClass="table-card" VBox.vgrow="ALWAYS">
+            <Label text="Situaciones registradas" styleClass="section-title"/>
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"        text="ID"       prefWidth="90"/>
+                    <TableColumn fx:id="colServer"    text="Servidor" prefWidth="340"/>
+                    <TableColumn fx:id="colType"      text="Tipo"     prefWidth="250"/>
+                    <TableColumn fx:id="colStartDate" text="Inicio"   prefWidth="150"/>
+                    <TableColumn fx:id="colEndDate"   text="Fin"      prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <HBox styleClass="action-bar">
+            <Button text="Atrás" onAction="#goBack" styleClass="action-button secondary-button"/>
+            <Button text="Guardar" onAction="#save" styleClass="action-button primary-button"/>
+            <Button text="Eliminar" onAction="#delete" styleClass="action-button danger-button"/>
+        </HBox>
+    </VBox>
+
+</VBox>

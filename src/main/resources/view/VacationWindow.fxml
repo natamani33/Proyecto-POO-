@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.VacationController"
+      spacing="20"
+      styleClass="page-shell">
+
+    <VBox styleClass="hero-card">
+        <Label text="Gestión de Vacaciones" styleClass="page-title"/>
+        <Label text="Visualiza periodos, saldos y días disfrutados dentro de una plantilla visual homogénea."
+               wrapText="true"
+               styleClass="page-subtitle"/>
+    </VBox>
+
+    <VBox styleClass="content-card" VBox.vgrow="ALWAYS">
+        <Label text="Datos de vacaciones" styleClass="section-title"/>
+
+        <GridPane styleClass="form-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+            </columnConstraints>
+
+        <Label text="Servidor *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbServer" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Periodo (año) *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtCoveredYear" promptText="2026"
+                   GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Inicio disfrute *" styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpStartDate" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Fin disfrute *" styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <DatePicker fx:id="dpEndDate" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Días disfrutados *" styleClass="required-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtEnjoyedDays" promptText="15"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Saldo pendiente *" styleClass="required-label" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtPendingDays" promptText="5"
+                   GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+        </GridPane>
+
+        <VBox styleClass="table-card" VBox.vgrow="ALWAYS">
+            <Label text="Vacaciones registradas" styleClass="section-title"/>
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"          text="ID"       prefWidth="90"/>
+                    <TableColumn fx:id="colServer"      text="Servidor" prefWidth="340"/>
+                    <TableColumn fx:id="colYear"        text="Año"      prefWidth="130"/>
+                    <TableColumn fx:id="colStartDate"   text="Inicio"   prefWidth="170"/>
+                    <TableColumn fx:id="colPendingDays" text="Saldo"    prefWidth="140"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <HBox styleClass="action-bar">
+            <Button text="Atrás" onAction="#goBack" styleClass="action-button secondary-button"/>
+            <Button text="Guardar" onAction="#save" styleClass="action-button primary-button"/>
+            <Button text="Eliminar" onAction="#delete" styleClass="action-button danger-button"/>
+        </HBox>
+    </VBox>
+
+</VBox>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.EmploymentLinkController"
+      spacing="20"
+      styleClass="page-shell">
+
+    <VBox styleClass="hero-card">
+        <Label text="Vinculación Laboral" styleClass="page-title"/>
+        <Label text="Gestiona el historial laboral con una composición uniforme entre formulario, tabla y acciones."
+               wrapText="true"
+               styleClass="page-subtitle"/>
+    </VBox>
+
+    <VBox styleClass="content-card" VBox.vgrow="ALWAYS">
+        <Label text="Datos de vinculación" styleClass="section-title"/>
+
+        <GridPane styleClass="form-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+            </columnConstraints>
+
+        <Label text="Servidor *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbServer" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Cargo *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbPosition" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Fecha ingreso *" styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpEntryDate" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Fecha retiro" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <DatePicker fx:id="dpRetirementDate" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Asignación mensual *" styleClass="required-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtMonthlySalary" promptText="Ej: 3200000"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Estado *" styleClass="required-label" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbStatus" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+        </GridPane>
+
+        <VBox styleClass="table-card" VBox.vgrow="ALWAYS">
+            <Label text="Historial de vinculaciones" styleClass="section-title"/>
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"        text="ID"            prefWidth="90"/>
+                    <TableColumn fx:id="colServer"    text="Servidor"      prefWidth="330"/>
+                    <TableColumn fx:id="colPosition"  text="Cargo"         prefWidth="250"/>
+                    <TableColumn fx:id="colEntryDate" text="Fecha ingreso" prefWidth="170"/>
+                    <TableColumn fx:id="colStatus"    text="Estado"        prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <HBox styleClass="action-bar">
+            <Button text="Atrás" onAction="#goBack" styleClass="action-button secondary-button"/>
+            <Button text="Guardar" onAction="#save" styleClass="action-button primary-button"/>
+            <Button text="Eliminar" onAction="#delete" styleClass="action-button danger-button"/>
+        </HBox>
+    </VBox>
+
+</VBox>

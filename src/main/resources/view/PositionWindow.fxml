@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.PositionController"
+      spacing="20"
+      styleClass="page-shell">
+
+    <VBox styleClass="hero-card">
+        <Label text="Gestión de Cargos" styleClass="page-title"/>
+        <Label text="Organiza la información base de los cargos con campos alineados y acciones consistentes."
+               wrapText="true"
+               styleClass="page-subtitle"/>
+    </VBox>
+
+    <VBox styleClass="content-card" VBox.vgrow="ALWAYS">
+        <Label text="Datos del cargo" styleClass="section-title"/>
+
+        <GridPane styleClass="form-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+            </columnConstraints>
+
+        <Label text="Nombre *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtName" promptText="Nombre del cargo"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Código *" styleClass="required-label" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtCode" promptText="Código"
+                   GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Grado *" styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtGrade" promptText="Grado"
+                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Dependencia *" styleClass="required-label" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbDependency" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+        </GridPane>
+
+        <VBox styleClass="table-card" VBox.vgrow="ALWAYS">
+            <Label text="Listado de cargos" styleClass="section-title"/>
+            <TableView fx:id="table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId"         text="ID"          prefWidth="90"/>
+                    <TableColumn fx:id="colName"       text="Nombre"      prefWidth="320"/>
+                    <TableColumn fx:id="colCode"       text="Código"      prefWidth="170"/>
+                    <TableColumn fx:id="colGrade"      text="Grado"       prefWidth="160"/>
+                    <TableColumn fx:id="colDependency" text="Dependencia" prefWidth="290"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <HBox styleClass="action-bar">
+            <Button text="Atrás" onAction="#goBack" styleClass="action-button secondary-button"/>
+            <Button text="Guardar" onAction="#save" styleClass="action-button primary-button"/>
+            <Button text="Eliminar" onAction="#delete" styleClass="action-button danger-button"/>
+        </HBox>
+    </VBox>
+
+</VBox>
