@@ -183,3 +183,32 @@ Compilacion validada con:
 ```powershell
 .\gradlew.bat compileJava --no-daemon
 ```
+
+## Capturas de pantalla 
+
+Panel General
+<img width="1919" height="989" alt="image" src="https://github.com/user-attachments/assets/caf60a5f-9a50-4b8a-bb27-46fa1d20514d" />
+
+Servidores Publicos
+<img width="1919" height="986" alt="image" src="https://github.com/user-attachments/assets/9944635c-6b21-4f9b-87cc-a21c8e0b0f5c" />
+
+Dependencias 
+<img width="1919" height="989" alt="image" src="https://github.com/user-attachments/assets/0dbfc4d9-bcba-47b0-a123-10fb29d3af1b" />
+
+Situacion Administrativa
+<img width="1918" height="987" alt="image" src="https://github.com/user-attachments/assets/5d0834b4-55c4-46d3-88d1-d29c15a10b79" />
+
+Gestion de Permisos 
+<img width="1919" height="988" alt="image" src="https://github.com/user-attachments/assets/81e167bd-4e74-49b6-9528-3af3e668b443" />
+
+Gestion de Cargos 
+<img width="1919" height="991" alt="image" src="https://github.com/user-attachments/assets/01664d3f-b566-4b4c-a0a0-80ab6787b89b" />
+
+Vinculacion Laboral 
+<img width="1919" height="988" alt="image" src="https://github.com/user-attachments/assets/31aea1b0-b2b8-4401-a491-12628a3d89a6" />
+
+Gestion de Vacaciones 
+<img width="1919" height="991" alt="image" src="https://github.com/user-attachments/assets/392d769d-cfea-4bc3-b62b-822749a6179b" />
+
+Gestion de Licencias 
+<img width="1919" height="992" alt="image" src="https://github.com/user-attachments/assets/9d67336c-7b7c-4306-98d5-77930db8d41c" />
