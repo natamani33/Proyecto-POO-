@@ -32,25 +32,6 @@ Aplicacion de escritorio desarrollada en JavaFX para gestionar informacion de ta
 - JDK 21 configurado en IntelliJ
 - Docker Desktop encendido
 
-## Inicio rapido en IntelliJ (recomendado)
-
-### 1. Abrir proyecto
-
-1. Open en IntelliJ y selecciona la carpeta raiz del proyecto.
-2. Espera la importacion de Gradle.
-3. Verifica Project SDK = 21.
-
-### 2. Ejecutar en un solo paso
-
-1. Abre el panel Gradle (derecha).
-2. Ve a Tasks > application.
-3. Ejecuta devRun.
-
-La tarea devRun:
-
-1. Levanta PostgreSQL con Docker Compose.
-2. Ejecuta la app JavaFX.
-
 ## Flujo alterno en IntelliJ (paso a paso)
 
 Si prefieres controlar cada etapa manualmente, usa la Terminal de IntelliJ:
