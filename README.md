@@ -1,5 +1,9 @@
 # Sistema de Talento Humano - Gobernacion de Boyaca
 
+Natalia Acosta Gómez
+Cristian Piza López
+Laura Cuta López
+
 Aplicacion de escritorio desarrollada en JavaFX para gestionar informacion de talento humano en una base de datos relacional unificada.
 
 Este README esta enfocado en una sola cosa: ejecutarlo bien desde IntelliJ IDEA.
