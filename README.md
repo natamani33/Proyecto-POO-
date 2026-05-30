@@ -6,7 +6,6 @@ Laura Cuta López
 
 Aplicacion de escritorio desarrollada en JavaFX para gestionar informacion de talento humano en una base de datos relacional unificada.
 
-Este README esta enfocado en una sola cosa: ejecutarlo bien desde IntelliJ IDEA.
 
 ## Tecnologias
 
@@ -92,13 +91,6 @@ jdbc:postgresql://localhost:55439/talento_humano
 
 Hibernate mantiene el esquema con `hibernate.hbm2ddl.auto=update`.
 
-## Tareas Gradle utiles (panel Gradle de IntelliJ)
-
-- devRun: inicia DB y ejecuta la app.
-- upDb: inicia solo PostgreSQL.
-- downDb: detiene PostgreSQL.
-- compileJava: compila el proyecto.
-
 ## Estructura del proyecto
 
 ```text
@@ -144,49 +136,6 @@ Relaciones clave:
 - vacation.server_id -> publicserver.id
 - permission.server_id -> publicserver.id
 - license.server_id -> publicserver.id
-
-## Solucion de problemas en IntelliJ
-
-### Docker no esta arriba
-
-Sintoma: falla devRun por conexion a DB.
-
-Accion:
-
-1. Abre Docker Desktop.
-2. Ejecuta de nuevo devRun.
-
-### IntelliJ no refresca Gradle
-
-Accion:
-
-1. En panel Gradle, click en Reload All Gradle Projects.
-
-### Puerto ocupado
-
-Accion:
-
-1. Cambia el puerto en docker-compose.yml.
-2. Actualiza JDBC en src/main/resources/META-INF/persistence.xml.
-
-### Lock de build en Windows/OneDrive
-
-Accion:
-
-1. Ejecuta `.\gradlew.bat --stop`.
-2. Vuelve a correr `compileJava` o `devRun`.
-
-## Clase principal
-
-- org.example.Main
-
-## Verificacion rapida
-
-Compilacion validada con:
-
-```powershell
-.\gradlew.bat compileJava --no-daemon
-```
 
 ## Capturas de pantalla 
 
